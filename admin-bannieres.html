@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bannières de l’accueil — Outil Premibel</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/pages/admin-bannieres.css">
+</head>
+<body data-page="admin-bannieres" data-chrome="none">
+
+<header class="abar">
+  <a class="abar__logo" href="index.html" title="Voir le site"><img src="assets/img/logo-premibel.png" alt="Premibel" width="843" height="206"></a>
+  <div class="abar__title"><b>Bannières de l’accueil</b><span>Planifiez la mise en avant du parquet du mois</span></div>
+  <div class="abar__actions">
+    <span class="abar__state" data-state>Brouillon enregistré</span>
+    <button class="btn btn--line btn--sm" data-reset title="Revenir au fichier data/bannieres.js">Réinitialiser</button>
+    <button class="btn btn--dark btn--sm" data-export><span>Exporter bannieres.js</span></button>
+  </div>
+</header>
+
+<main class="admin">
+  <!-- Planning -->
+  <section class="plan" aria-label="Planning sur 12 mois">
+    <div class="plan__head">
+      <h2>Planning</h2>
+      <p data-gaps class="plan__gaps"></p>
+    </div>
+    <div class="plan__grid" data-plan></div>
+  </section>
+
+  <div class="admin__cols">
+    <!-- Liste + éditeur -->
+    <section class="ed" aria-label="Éditeur">
+      <div class="ed__list">
+        <div class="ed__list-head"><h2>Bannières</h2><button class="btn btn--accent btn--sm" data-new><span>+ Nouvelle</span></button></div>
+        <ul data-list></ul>
+      </div>
+
+      <form class="ed__form" data-form autocomplete="off" novalidate>
+        <div class="ed__row">
+          <div class="seg" role="radiogroup" aria-label="Type de bannière">
+            <label><input type="radio" name="mode" value="compose" checked><span>Composée</span></label>
+            <label><input type="radio" name="mode" value="image"><span>Image (Canva)</span></label>
+          </div>
+          <label class="check"><input type="checkbox" name="permanente"> <span>Bannière permanente (par défaut)</span></label>
+        </div>
+
+        <fieldset data-when="dated">
+          <legend>Période d’affichage</legend>
+          <div class="fields-2">
+            <div class="field"><input type="date" name="debut" placeholder=" "><label>Début</label></div>
+            <div class="field"><input type="date" name="fin" placeholder=" "><label>Fin (incluse)</label></div>
+          </div>
+          <div class="quick" data-quick></div>
+        </fieldset>
+
+        <fieldset data-when="compose">
+          <legend>Textes</legend>
+          <div class="field"><input name="surtitre" placeholder=" " maxlength="40"><label>Pastille (ex. « Du 1er au 13 octobre »)</label></div>
+          <div class="field"><input name="accroche" placeholder=" " maxlength="48"><label>Accroche en italique</label></div>
+          <div class="field"><input name="titre" placeholder=" " maxlength="22" required><label>Grand titre (court : 1 à 2 mots)</label><small class="count" data-count-for="titre"></small></div>
+          <div class="field"><textarea name="texte" rows="2" placeholder=" " maxlength="140"></textarea><label>Texte</label><small class="count" data-count-for="texte"></small></div>
+          <div class="fields-2">
+            <div class="field"><input name="ctaLabel" placeholder=" " maxlength="28"><label>Bouton : libellé</label></div>
+            <div class="field"><input name="ctaHref" placeholder=" "><label>Bouton : lien</label></div>
+          </div>
+        </fieldset>
+
+        <fieldset data-when="compose">
+          <legend>Parquet mis en avant</legend>
+          <div class="psel" data-psel>
+            <div class="psel__current" data-pcurrent></div>
+            <div class="field"><input type="search" data-psearch placeholder=" "><label>Rechercher un produit (nom ou réf.)</label></div>
+            <label class="check"><input type="checkbox" data-ponlypromo checked> <span>Produits en promotion uniquement</span></label>
+            <div class="psel__results" data-presults></div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Visuel</legend>
+          <div class="imgpick">
+            <div class="imgpick__preview" data-imgpreview></div>
+            <div class="imgpick__actions">
+              <label class="btn btn--line btn--sm"><input type="file" accept="image/*" data-file hidden><span>Importer une image…</span></label>
+              <button class="btn btn--line btn--sm" type="button" data-lib><span>Bibliothèque</span></button>
+              <p class="muted small" data-imghint></p>
+            </div>
+          </div>
+          <div data-when="image">
+            <div class="field"><input name="alt" placeholder=" "><label>Texte alternatif (ce que dit l’image)</label></div>
+            <div class="field"><input name="lien" placeholder=" "><label>Lien au clic</label></div>
+            <label class="btn btn--line btn--sm"><input type="file" accept="image/*" data-file-mobile hidden><span>Version mobile (optionnelle)…</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Bandeau défilant en haut du site</legend>
+          <div class="field"><input name="annonce" placeholder=" " maxlength="80"><label>Message (ex. « Saison du bois — jusqu’au 13 octobre »)</label></div>
+        </fieldset>
+
+        <div class="ed__foot">
+          <button class="btn btn--line btn--sm" type="button" data-dup><span>Dupliquer</span></button>
+          <button class="btn btn--line btn--sm danger" type="button" data-del><span>Supprimer</span></button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Aperçu -->
+    <section class="pv" aria-label="Aperçu">
+      <div class="pv__bar">
+        <div class="seg" role="group" aria-label="Appareil">
+          <button type="button" aria-pressed="true" data-device="desktop">Ordinateur</button>
+          <button type="button" aria-pressed="false" data-device="mobile">Mobile</button>
+        </div>
+        <a class="link-arrow" data-open-preview target="_blank" rel="noopener">Ouvrir l’aperçu <span>↗</span></a>
+      </div>
+      <div class="pv__stage" data-stage>
+        <div class="pv__frame" data-frame-wrap><iframe title="Aperçu de la bannière" data-frame loading="lazy"></iframe></div>
+      </div>
+      <p class="muted small pv__note">L’aperçu utilise votre brouillon (enregistré dans ce navigateur). Pour publier : <b>Exporter bannieres.js</b>, puis remplacer le fichier <code>data/bannieres.js</code> du site (et copier les images importées dans <code>assets/img/bannieres/</code>).</p>
+    </section>
+  </div>
+</main>
+
+<!-- Bibliothèque d'images -->
+<dialog class="lib" data-libdlg>
+  <div class="lib__head"><h3>Bibliothèque d’images</h3><input type="search" placeholder="Filtrer…" data-libq aria-label="Filtrer les images"><button class="icon-btn" data-libclose aria-label="Fermer">✕</button></div>
+  <div class="lib__grid" data-libgrid></div>
+</dialog>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="data/site.js"></script>
+<script src="data/bannieres.js"></script>
+<script src="data/products.js"></script>
+<script src="data/categories.js"></script>
+<script src="data/posts.js"></script>
+<script src="data/site-images.js"></script>
+<script src="data/realisations.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/admin-bannieres.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Nos showrooms et entrepôt — Premibel Parquet</title>
+<meta name="description" content="Showrooms Premibel Parquet à Paris 11e (Voltaire, Roquette), Paris 15e (Balard) et entrepôt à Pantin : adresses, horaires, téléphones et itinéraires.">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/pages/showrooms.css">
+<link rel="stylesheet" href="assets/css/pages/magasins.css">
+</head>
+<body data-page="magasins">
+
+<main id="main">
+  <section class="page-hero container">
+    <nav class="crumbs" aria-label="Fil d’Ariane"><a href="index.html">Accueil</a><span aria-hidden="true">/</span><span>Showrooms &amp; entrepôt</span></nav>
+    <div class="page-hero__grid">
+      <h1 class="h1 split">Nos showrooms <em>et entrepôt</em></h1>
+      <p class="lead reveal">Trouvez facilement le magasin ou showroom Premibel Parquet le plus proche de chez vous grâce à notre carte interactive. Que vous soyez un particulier ou un professionnel, nos équipes vous accueillent pour vous conseiller sur le choix de votre parquet parmi une large sélection de références.</p>
+    </div>
+  </section>
+
+  <section class="container mg-intro">
+    <p class="mg-intro__count reveal" aria-hidden="true"><span data-count="4">4</span><small>adresses en<br>Île-de-France</small></p>
+    <div class="mg-intro__text">
+      <p class="reveal">Premibel Parquet propose des produits de qualité&#8239;: parquets massifs, contrecollés, stratifiés, vinyles et accessoires. Chaque showroom vous permet de <em>voir, toucher et comparer</em> les différentes essences de bois, finitions et styles, afin de faire le meilleur choix pour votre intérieur.</p>
+      <p class="reveal">Nos entrepôts et points de retrait en Île-de-France vous garantissent une disponibilité rapide des produits en stock et un service de proximité.</p>
+    </div>
+  </section>
+
+  <section class="section--tight container mg-finder" aria-labelledby="finder-title">
+    <div class="head-row">
+      <div>
+        <p class="eyebrow reveal">Carte interactive</p>
+        <h2 class="h2 split" id="finder-title">Trouver <em>votre adresse</em></h2>
+      </div>
+      <p class="muted reveal mg-finder__hint">Utilisez la carte pour localiser nos différents points de vente, consulter les horaires d’ouverture et prendre contact avec le magasin le plus adapté à votre projet.</p>
+    </div>
+
+    <div class="mg-tools reveal">
+      <form class="mg-search" role="search" data-search aria-label="Rechercher une adresse">
+        <label class="sr-only" for="mg-q">Ville, code postal ou magasin</label>
+        <span class="mg-search__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg></span>
+        <input id="mg-q" name="q" type="search" placeholder="Ville, code postal ou magasin" autocomplete="postal-code" enterkeyhint="search" aria-describedby="mg-q-status">
+        <button class="mg-search__clear" type="button" data-clear aria-label="Effacer la recherche" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+        <button class="btn btn--dark btn--sm mg-search__go" type="submit"><span>Rechercher</span></button>
+      </form>
+      <ul class="mg-legend" aria-label="Légende de la carte">
+        <li><span class="pb-pin pb-pin--mini" aria-hidden="true"><i></i></span>Showroom</li>
+        <li><span class="pb-pin pb-pin--mini pb-pin--wh" aria-hidden="true"><i></i></span>Entrepôt &amp; retrait</li>
+      </ul>
+    </div>
+    <p class="mg-status" id="mg-q-status" data-status role="status" aria-live="polite"></p>
+
+    <div class="mg-finder__grid">
+      <ol class="mg-list" data-list role="list" aria-label="Nos adresses"></ol>
+      <div class="mg-map-wrap">
+        <div class="mg-map pb-map" data-map id="mg-map" role="region" aria-label="Carte de nos showrooms et de notre entrepôt">
+          <span class="pb-map__veil" data-veil>Chargement de la carte…</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container mg-video" aria-labelledby="video-title">
+    <div class="mg-video__head">
+      <p class="eyebrow reveal">En images</p>
+      <h2 class="h2 split" id="video-title">Entrez dans <em>le showroom</em></h2>
+    </div>
+    <figure class="mg-video__frame media-reveal" data-video>
+      <video preload="none" playsinline poster="assets/img/site/premibel-magasin-voltaire.webp" aria-label="Vidéo de présentation du showroom Premibel">
+        <source src="assets/video/video-magasin-2-4.mp4" type="video/mp4">
+      </video>
+      <button class="mg-video__play" type="button" data-play aria-label="Lire la vidéo du showroom">
+        <span class="mg-video__disc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+        <span class="mg-video__label">Lire la vidéo</span>
+      </button>
+    </figure>
+    <figcaption class="mg-video__cap muted reveal">Showroom Premibel — boulevard Voltaire, Paris 11<sup>e</sup>.</figcaption>
+  </section>
+
+  <section class="section container" aria-label="Avis clients" data-reviews></section>
+
+  <div data-cta></div>
+</main>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="data/site.js"></script>
+<script src="data/bannieres.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/showrooms.js"></script>
+<script src="assets/js/pages/magasins.js"></script>
+</body>
+</html>

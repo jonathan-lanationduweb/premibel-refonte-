@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Premibel — cartes « Recommandations pour une installation parfaite »
+   (fiche produit et panier « Compléter mon installation »)
+   ========================================================================== */
+.reco-sec__lead { max-width: 40ch; margin: 0; }
+.reco-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: clamp(1rem, 2vw, 1.6rem); align-items: start; }
+
+.reco { background: var(--paper); border-radius: var(--r-lg); padding: clamp(1.1rem, 2.2vw, 1.7rem); display: grid; gap: 1.1rem; min-width: 0; }
+.reco__top { display: grid; grid-template-columns: clamp(84px, 9vw, 112px) minmax(0, 1fr); gap: 1rem; align-items: start; }
+.reco__img { display: block; aspect-ratio: 1; border-radius: 14px; overflow: hidden; background: var(--bone-2); }
+.reco__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
+.reco:hover .reco__img img { transform: scale(1.04); }
+.reco__txt { min-width: 0; display: grid; gap: .3rem; }
+.reco__k { font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.reco__t { margin: 0; font-size: 1.05rem; font-weight: 500; letter-spacing: -.015em; line-height: 1.3; }
+.reco__t a:hover { color: var(--red); }
+.reco__d { margin: 0; font-size: 13.5px; color: var(--ink-2); line-height: 1.5; }
+.reco__d b { font-weight: 500; }
+
+.reco__cfg { display: grid; gap: .8rem; }
+.reco__set { border: 0; margin: 0; padding: 0; min-width: 0; }
+.reco__set legend { padding: 0; margin-bottom: .45rem; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.reco__types, .reco__thick { display: flex; flex-wrap: wrap; gap: .4rem; }
+.reco__type, .reco__th { position: relative; cursor: pointer; flex: 1 1 auto; }
+.reco__type input, .reco__th input { position: absolute; opacity: 0; pointer-events: none; }
+.reco__type > span, .reco__th > span { display: grid; gap: .1rem; padding: .6rem .85rem; border-radius: 12px; box-shadow: inset 0 0 0 1px var(--line-2); transition: box-shadow .3s, background .3s; min-height: 44px; }
+.reco__type b, .reco__th b { font-weight: 500; font-size: 14px; }
+.reco__type small, .reco__th small { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.reco__th em { font-style: normal; color: var(--red); }
+.reco__type input:checked + span, .reco__th input:checked + span { box-shadow: inset 0 0 0 1.5px var(--ink); background: var(--bone); }
+.reco__type input:focus-visible + span, .reco__th input:focus-visible + span { outline: 2px solid var(--red); outline-offset: 2px; }
+
+.reco__fields { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .8rem; align-items: end; }
+.reco__s { margin: 0; }
+.reco__s input { padding-right: 2.6rem; font-variant-numeric: tabular-nums; }
+.reco__suffix { position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 14px; pointer-events: none; }
+.reco__q { display: grid; gap: .35rem; justify-items: start; }
+.reco__ql { font-size: 12.5px; color: var(--muted); }
+.reco__qty { height: 50px; }
+.reco__qty button { width: 42px; font-size: 18px; transition: transform .15s; }
+.reco__qty button:active { transform: scale(.88); }
+.reco__qty input { width: 44px; font-variant-numeric: tabular-nums; }
+.reco__meta { margin: 0; font-size: 13.5px; color: var(--ink-2); }
+.reco__meta b { font-weight: 500; font-variant-numeric: tabular-nums; }
+.reco__meta span { color: var(--muted); }
+
+.reco__price { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: .2rem 1rem; border-top: 1px solid var(--line); padding-top: .9rem; }
+.reco__price > div { display: grid; gap: .1rem; }
+.reco__price dt { font-size: 12px; color: var(--muted); letter-spacing: .04em; }
+.reco__price dd { margin: 0; font-size: 14px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.reco__price dd b { font-weight: 500; color: var(--ink); font-size: 1.05rem; letter-spacing: -.02em; }
+.reco__price small { display: block; font-size: 12.5px; color: var(--muted); }
+.reco__tot dd b { font-size: 1.35rem; }
+.reco__eco { margin: -.4rem 0 0; font-size: 12px; color: var(--muted); line-height: 1.45; }
+.reco__eco[hidden] { display: none; }
+
+.reco__add { position: relative; overflow: hidden; }
+.reco__add-l, .reco__add-ok { transition: transform .5s var(--ease), opacity .4s; }
+.reco__add-ok { position: absolute; inset: 0; display: grid; place-items: center; transform: translateY(100%); opacity: 0; }
+.reco__add.is-added .reco__add-l { transform: translateY(-100%); opacity: 0; }
+.reco__add.is-added .reco__add-ok { transform: none; opacity: 1; }
+.reco__incart { margin: -.4rem 0 0; font-size: 12.5px; color: var(--ok); }
+.reco__incart a { text-decoration: underline; text-underline-offset: 3px; color: var(--ink-2); }
+.reco__incart[hidden] { display: none; }
+
+@media (max-width: 420px) {
+  .reco__top { grid-template-columns: 72px minmax(0, 1fr); }
+  .reco__fields { grid-template-columns: 1fr; }
+  .reco__price { grid-template-columns: 1fr; }
+}

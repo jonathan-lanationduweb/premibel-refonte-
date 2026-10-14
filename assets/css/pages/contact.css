@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Page Contact
+   ========================================================================== */
+.ct-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(280px, 1fr); gap: clamp(2rem, 5vw, 5.5rem); align-items: start; border-top: 1px solid var(--line); padding-top: clamp(2rem, 4vw, 3rem); }
+.ct-intro { columns: 2 260px; column-gap: 2.4rem; margin-bottom: clamp(1.8rem, 3vw, 2.6rem); }
+.ct-intro p { margin: 0 0 1rem; color: var(--ink-2); font-size: 15.5px; line-height: 1.7; break-inside: avoid; }
+
+.ct-form-wrap { margin: 0; padding: clamp(1.4rem, 4vw, 3rem); }
+.ct-form__title { font: 400 clamp(1.6rem, 2.6vw, 2.2rem)/1.1 var(--sans); letter-spacing: -.03em; margin: 0 0 2rem; max-width: 22ch; }
+.ct-form__title em { color: var(--red); }
+.ct-form .fgroup { margin-bottom: .6rem; }
+.ct-hint { font-size: 13.5px; color: var(--muted); margin: 0 0 1.4rem; min-height: 1.4em; }
+.ct-hint a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.ct-form .field label small { font-size: 12px; }
+.ct-form__foot { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.2rem; }
+.ct-form__req { margin: 0; font-size: 13px; }
+
+/* Colonne latérale */
+.ct-side { position: sticky; top: calc(var(--header-h) + 24px); display: grid; gap: clamp(2rem, 4vw, 3rem); }
+.ct-direct { display: grid; }
+.ct-direct .eyebrow { margin-bottom: .6rem; }
+.ct-direct__row { display: grid; gap: .15rem; padding: 1.1rem 0; border-bottom: 1px solid var(--line); position: relative; }
+.ct-direct__row:first-of-type { border-top: 1px solid var(--line); }
+.ct-direct__k { font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.ct-direct__v { font: 400 clamp(1.4rem, 2.2vw, 1.85rem)/1.15 var(--sans); letter-spacing: -.03em; transition: color .3s, transform .6s var(--ease); overflow-wrap: anywhere; }
+.ct-direct__row::after { content: "→"; position: absolute; right: 0; bottom: 1.2rem; opacity: 0; transform: translateX(-8px); transition: opacity .4s, transform .6s var(--ease); }
+.ct-direct__row:hover .ct-direct__v { color: var(--red); transform: translateX(4px); }
+.ct-direct__row:hover::after { opacity: 1; transform: none; }
+
+.ct-why h3 { font: 400 1.5rem/1.15 var(--sans); letter-spacing: -.025em; margin: 0 0 1.2rem; }
+.ct-why h3 em { color: var(--red); }
+.ct-why ol { list-style: none; margin: 0 0 1.6rem; padding: 0; counter-reset: why; }
+.ct-why li { counter-increment: why; display: grid; grid-template-columns: 2rem 1fr; padding: .55rem 0; font-size: 15px; color: var(--ink-2); }
+.ct-why li::before { content: counter(why, decimal-leading-zero); font: italic 400 1rem/1.5 var(--serif); color: var(--red); }
+.ct-why__links { display: grid; gap: .9rem; justify-items: start; }
+
+/* Adresses */
+.ct-stores__list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-2); }
+.ct-store { display: grid; grid-template-columns: 1.3fr 1.2fr 1.2fr auto; gap: .6rem 2rem; align-items: center; padding: 1.4rem 0; border-bottom: 1px solid var(--line-2); }
+.ct-store__name { display: grid; gap: .1rem; }
+.ct-store__type { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.ct-store__name b { font-weight: 400; font-size: 1.45rem; letter-spacing: -.03em; transition: color .3s; }
+.ct-store__name:hover b { color: var(--red); }
+.ct-store__addr { color: var(--ink-2); font-size: 14.5px; line-height: 1.45; }
+.ct-store__tel { display: inline-flex; align-items: center; gap: .55rem; min-height: 44px; font-variant-numeric: tabular-nums; font-size: 15px; white-space: nowrap; }
+.ct-store__tel svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.ct-store__tel:hover { color: var(--red); }
+
+@media (max-width: 1000px) {
+  .ct-grid { grid-template-columns: 1fr; }
+  .ct-side { position: static; grid-template-columns: 1fr 1fr; }
+  .ct-store { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 680px) {
+  .ct-side { grid-template-columns: 1fr; }
+  .ct-store { grid-template-columns: 1fr; gap: .4rem; }
+  .ct-form-wrap { margin-inline: 0; }
+  .ct-form__foot .btn { width: 100%; }
+}
+.ct-why__links .link-arrow, .ct-stores .head-row .link-arrow { min-height: 44px; align-items: center; }
+
+/* Anti-spam : champ piège hors écran (pas display:none, que certains robots détectent) */
+.ct-hp { position: absolute !important; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }

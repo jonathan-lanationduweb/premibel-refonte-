@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Prise de rendez-vous — Premibel Parquet</title>
+<meta name="description" content="Prenez rendez-vous avec un conseiller Premibel Parquet : sur place au showroom Paris Boulevard Voltaire ou par téléphone, sur un créneau d’une heure.">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/pages/showrooms.css">
+<link rel="stylesheet" href="assets/css/pages/forms.css">
+<link rel="stylesheet" href="assets/css/pages/rendez-vous.css">
+</head>
+<body data-page="rendez-vous">
+
+<main id="main">
+  <section class="page-hero container">
+    <nav class="crumbs" aria-label="Fil d’Ariane"><a href="index.html">Accueil</a><span aria-hidden="true">/</span><span>Prise de rendez-vous</span></nav>
+    <div class="page-hero__grid">
+      <h1 class="h1 split">Prenez <em>rendez&#8209;vous</em></h1>
+      <p class="lead reveal">Un conseiller Premibel vous reçoit au showroom du boulevard Voltaire, ou vous appelle à l’heure convenue. Choisissez votre formule, puis le créneau d’une heure qui vous convient.</p>
+    </div>
+  </section>
+
+  <section class="container rv-layout">
+    <form class="rv-form" data-rdv aria-label="Prise de rendez-vous">
+      <div class="stepper" data-stepper>
+        <div class="stepper__head"><span class="stepper__count" data-step-count aria-live="polite">Étape 1 sur 5</span></div>
+        <div class="stepper__bar" aria-hidden="true"><span></span></div>
+        <ol class="stepper__nav">
+          <li><button type="button">Formule</button></li>
+          <li><button type="button">Projet</button></li>
+          <li><button type="button">Date &amp; créneau</button></li>
+          <li><button type="button">Coordonnées</button></li>
+          <li><button type="button">Confirmation</button></li>
+        </ol>
+
+        <div class="stepper__viewport">
+          <!-- 1. Type de rendez-vous -->
+          <section class="step" aria-labelledby="st1">
+            <h2 class="step__title" id="st1" tabindex="-1" data-step-title>Quel type de <em>rendez&#8209;vous&#8239;?</em></h2>
+            <p class="step__intro">Chaque rendez-vous dure une heure. Les créneaux sont réservables jusqu’à 24&#8239;h à l’avance.</p>
+            <div class="rv-notice" data-notice hidden role="note"></div>
+            <fieldset class="fgroup" data-required data-msg="Choisissez un type de rendez-vous pour continuer.">
+              <legend class="sr-only">Type de rendez-vous</legend>
+              <div class="rv-types" data-types></div>
+            </fieldset>
+            <div class="rv-others" data-others></div>
+            <div class="step__foot">
+              <a class="back" href="magasins.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Voir nos adresses</a>
+              <button class="btn btn--dark" type="button" data-next><span>Continuer</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
+          </section>
+
+          <!-- 2. Projet (facultatif) -->
+          <section class="step" aria-labelledby="st2">
+            <h2 class="step__title" id="st2" tabindex="-1" data-step-title>Votre <em>projet</em></h2>
+            <p class="step__intro">Facultatif&#8239;: quelques repères pour que votre conseiller prépare les bons échantillons. Vous pouvez passer directement à l’étape suivante.</p>
+            <fieldset class="fgroup">
+              <legend>Pièce(s) concernée(s) <small>plusieurs choix possibles</small></legend>
+              <div class="opts">
+                <label class="opt"><input type="checkbox" name="piece" value="Salon"><span>Salon</span></label>
+                <label class="opt"><input type="checkbox" name="piece" value="Chambre"><span>Chambre</span></label>
+                <label class="opt"><input type="checkbox" name="piece" value="Cuisine"><span>Cuisine</span></label>
+                <label class="opt"><input type="checkbox" name="piece" value="Salle de bains"><span>Salle de bains</span></label>
+                <label class="opt"><input type="checkbox" name="piece" value="Entrée &amp; couloir" data-label="Entrée & couloir"><span>Entrée &amp; couloir</span></label>
+                <label class="opt"><input type="checkbox" name="piece" value="Bureau / commerce"><span>Bureau / commerce</span></label>
+                <label class="opt"><input type="checkbox" name="piece" value="Terrasse"><span>Terrasse</span></label>
+                <label class="opt"><input type="checkbox" name="piece" value="Autre"><span>Autre</span></label>
+              </div>
+            </fieldset>
+            <div class="rv-surface">
+              <div class="field"><input id="rv-surface" name="surface" type="number" inputmode="decimal" min="1" max="10000" step="0.5" placeholder=" " data-msg-range="Indiquez une surface entre 1 et 10 000 m²."><label for="rv-surface">Surface approximative <small class="muted">(facultatif)</small></label><span class="field__suffix" aria-hidden="true">m²</span></div>
+            </div>
+            <fieldset class="fgroup">
+              <legend>Motif envisagé <small>facultatif</small></legend>
+              <div class="opts opts--grid rv-motifs">
+                <label class="opt opt--tile"><input type="radio" name="motif" value="Lames droites"><span><img src="assets/img/site/lames-droites.webp" alt="" loading="lazy"><b>Lames droites</b></span></label>
+                <label class="opt opt--tile"><input type="radio" name="motif" value="Point de Hongrie"><span><img src="assets/img/site/point-de-hongrie.webp" alt="" loading="lazy"><b>Point de Hongrie</b></span></label>
+                <label class="opt opt--tile"><input type="radio" name="motif" value="Bâton rompu"><span><img src="assets/img/journal/batons-rompus.webp" alt="" loading="lazy"><b>Bâton rompu</b></span></label>
+                <label class="opt opt--tile"><input type="radio" name="motif" value="Dalles de Versailles"><span><img src="assets/img/site/dalles-de-versailles.webp" alt="" loading="lazy"><b>Dalles de Versailles</b></span></label>
+                <label class="opt opt--tile rv-motif--none"><input type="radio" name="motif" value="Je ne sais pas encore"><span><b>Je ne sais pas encore</b><small>Votre conseiller vous présentera les possibilités.</small></span></label>
+              </div>
+            </fieldset>
+            <div class="step__foot">
+              <button class="back" type="button" data-prev><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Retour</button>
+              <button class="btn btn--dark" type="button" data-next><span>Continuer</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
+          </section>
+
+          <!-- 3. Date & créneau -->
+          <section class="step" aria-labelledby="st3">
+            <h2 class="step__title" id="st3" tabindex="-1" data-step-title>Date <em>&amp; créneau</em></h2>
+            <p class="step__intro" data-cal-intro>Créneaux d’une heure, à réserver au plus tard 24&#8239;h à l’avance. Les jours sans disponibilité sont grisés.</p>
+            <div data-cal></div>
+            <div class="step__foot">
+              <button class="back" type="button" data-prev><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Retour</button>
+              <button class="btn btn--dark" type="button" data-next><span>Continuer</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
+          </section>
+
+          <!-- 4. Coordonnées -->
+          <section class="step" aria-labelledby="st4">
+            <h2 class="step__title" id="st4" tabindex="-1" data-step-title>Vos <em>coordonnées</em></h2>
+            <p class="step__intro">Pour confirmer votre rendez-vous et vous joindre à l’heure convenue.</p>
+            <div class="field"><input id="rv-nom" name="nom" type="text" placeholder=" " required autocomplete="name" data-rule="name" data-msg="Indiquez votre nom."><label for="rv-nom">Nom <span class="req" aria-hidden="true">*</span></label></div>
+            <div class="fields-2">
+              <div class="field"><input id="rv-email" name="email" type="email" placeholder=" " required autocomplete="email" inputmode="email" data-msg="Indiquez votre adresse e-mail."><label for="rv-email">E-mail <span class="req" aria-hidden="true">*</span></label></div>
+              <div class="field"><input id="rv-tel" name="tel" type="tel" placeholder=" " required autocomplete="tel" inputmode="tel" data-rule="tel" data-msg="Indiquez un numéro pour vous joindre."><label for="rv-tel">Téléphone <span class="req" aria-hidden="true">*</span></label></div>
+            </div>
+            <div class="field"><textarea id="rv-msg" name="notes" placeholder=" " rows="4"></textarea><label for="rv-msg">Notes <small class="muted">(facultatif)</small></label></div>
+            <div class="check-wrap">
+              <label class="check"><input type="checkbox" name="rgpd" required data-msg="Ce consentement est obligatoire pour pouvoir envoyer votre demande."><span>J’accepte que les informations saisies soient utilisées pour organiser ce rendez-vous, conformément à la <a href="legal.html?p=confidentialite">politique de confidentialité</a>. <span class="req" aria-hidden="true">*</span></span></label>
+            </div>
+            <p class="muted rv-req"><span class="req" aria-hidden="true">*</span> Champs obligatoires</p>
+            <div class="step__foot">
+              <button class="back" type="button" data-prev><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Retour</button>
+              <button class="btn btn--dark" type="button" data-next><span>Vérifier</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
+          </section>
+
+          <!-- 5. Confirmation -->
+          <section class="step" aria-labelledby="st5">
+            <h2 class="step__title" id="st5" tabindex="-1" data-step-title>Tout est <em>correct&#8239;?</em></h2>
+            <p class="step__intro">Relisez votre demande avant de la confirmer.</p>
+            <dl class="recap" data-recap></dl>
+            <div class="step__foot">
+              <button class="back" type="button" data-prev><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Retour</button>
+              <button class="btn btn--accent" type="submit"><span>Confirmer le rendez-vous</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </form>
+
+    <aside class="rv-aside" aria-label="Votre rendez-vous" data-aside>
+      <div class="rv-ticket">
+        <figure class="rv-ticket__img"><img data-t-img src="assets/img/site/showroom-voltaire.webp" alt=""></figure>
+        <div class="rv-ticket__body">
+          <p class="eyebrow">Votre rendez-vous</p>
+          <dl>
+            <div><dt>Formule</dt><dd data-t-type>—</dd></div>
+            <div><dt>Durée</dt><dd data-t-dur>1 heure</dd></div>
+            <div><dt>Projet</dt><dd data-t-project>—</dd></div>
+            <div><dt>Date</dt><dd data-t-date>—</dd></div>
+          </dl>
+          <p class="rv-ticket__help">Une question&#8239;? <a href="tel:+33147002510" data-t-tel>01 47 00 25 10</a></p>
+        </div>
+      </div>
+    </aside>
+  </section>
+</main>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="data/site.js"></script>
+<script src="data/bannieres.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/showrooms.js"></script>
+<script src="assets/js/pages/forms.js"></script>
+<script src="assets/js/pages/rendez-vous.js"></script>
+</body>
+</html>

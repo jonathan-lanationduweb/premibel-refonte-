@@ -1,0 +1,135 @@
+/* ==========================================================================
+   Notre histoire — couverture parallaxe, frise épinglée, récit à image collante
+   ========================================================================== */
+
+/* ---------- Héros & couverture ---------- */
+.h-hero .eyebrow { margin-bottom: 1.2rem; }
+.h-cover { margin: 0 var(--gutter); position: relative; }
+.h-cover__frame { border-radius: var(--r-lg); overflow: hidden; height: clamp(340px, 62vw, 760px); }
+.h-cover__frame img { width: 100%; height: 118%; object-fit: cover; object-position: 50% 40%; will-change: transform; }
+.h-cover__cap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-top: 1rem; padding-inline: 0; font-size: 13.5px; }
+
+/* ---------- Chiffres ---------- */
+.h-figures { display: grid; grid-template-columns: 1fr 1.6fr; gap: clamp(2rem, 5vw, 5rem); align-items: end; }
+.h-figures__grid { display: grid; grid-template-columns: repeat(3, 1fr); margin: 0; border-top: 1px solid var(--line); }
+.h-fig { padding: 1.6rem 1.2rem 0 0; }
+.h-fig + .h-fig { padding-left: 1.4rem; border-left: 1px solid var(--line); }
+.h-fig dt { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.h-fig dd { margin: .6rem 0 .5rem; }
+.h-fig__n { font: 400 clamp(2.8rem, 5.4vw, 5rem)/1 var(--sans); letter-spacing: -.05em; font-variant-numeric: tabular-nums; }
+.h-fig p { margin: 0; font-size: 14.5px; color: var(--ink-2); max-width: 24ch; }
+
+/* ---------- Chronologie ---------- */
+.h-chrono { padding-block: var(--section) 0; background: var(--ink); color: var(--paper); border-radius: var(--r-lg); margin-inline: var(--gutter); overflow: hidden; position: relative; }
+.h-chrono .eyebrow { color: rgba(250, 247, 242, .6); }
+.h-chrono .h2 em { color: var(--red-tint); }
+.h-chrono__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; flex-wrap: wrap; }
+.h-chrono__hint { display: none; font-size: 13px; color: rgba(250, 247, 242, .55); }
+.h-chrono__hint span { display: inline-block; animation: h-nudge 2.4s var(--ease) infinite; }
+@keyframes h-nudge { 50% { transform: translateX(6px); } }
+.h-chrono__viewport { padding: clamp(2.5rem, 6vw, 4.5rem) var(--gutter) var(--section); }
+.h-chrono__track { list-style: none; margin: 0; padding: 0; position: relative; display: grid; gap: 0; }
+/* vue verticale (mobile, mouvement réduit) : un fil à gauche */
+.h-chrono__track::before { content: ""; position: absolute; left: 0; top: .6rem; bottom: .6rem; width: 1px; background: rgba(250, 247, 242, .16); }
+.h-step { position: relative; padding: 0 0 2.6rem 1.8rem; }
+.h-step::before { content: ""; position: absolute; left: -4px; top: .9rem; width: 9px; height: 9px; border-radius: 50%; background: var(--ink); box-shadow: inset 0 0 0 1.5px var(--red-soft); }
+.h-step__year { display: block; font: 400 clamp(3.2rem, 9vw, 7.5rem)/.9 var(--sans); letter-spacing: -.06em; color: var(--paper); font-variant-numeric: tabular-nums; }
+.h-step__year small { display: block; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--red-soft); margin-bottom: .4rem; }
+.h-step__year--word { font-family: var(--serif); letter-spacing: -.03em; }
+.h-step__year--word em { color: var(--red-tint); }
+.h-step__title { font-weight: 500; font-size: 1.15rem; letter-spacing: -.015em; margin: 1.1rem 0 .5rem; color: var(--paper); }
+.h-step p { margin: 0; color: rgba(250, 247, 242, .68); font-size: 15px; line-height: 1.6; max-width: 40ch; }
+.h-step .h-step__note { margin-top: .9rem; font-size: 12.5px; color: rgba(250, 247, 242, .45); }
+.h-chrono__bar { display: none; }
+
+/* vue horizontale épinglée (classe posée par le JS : grand écran + mouvement) */
+.h-chrono.is-h .h-chrono__hint { display: inline-block; }
+.h-chrono.is-h .h-chrono__viewport { padding-inline: 0; padding-bottom: clamp(2rem, 4vw, 3rem); overflow: visible; }
+.h-chrono.is-h .h-chrono__track { display: flex; width: max-content; padding-inline: var(--gutter); gap: clamp(2.5rem, 4vw, 4.5rem); will-change: transform; }
+.h-chrono.is-h .h-chrono__track::before { left: 0; right: 0; top: calc(clamp(3.2rem, 9vw, 7.5rem) * .9 + 1.6rem); bottom: auto; width: auto; height: 1px; }
+.h-chrono.is-h .h-step { width: clamp(300px, 27vw, 410px); padding: 0; }
+.h-chrono.is-h .h-step::before { left: 0; top: calc(clamp(3.2rem, 9vw, 7.5rem) * .9 + 1.6rem - 4px); }
+.h-chrono.is-h .h-step__title { margin-top: 3rem; }
+.h-chrono.is-h .h-step__year { color: rgba(250, 247, 242, .22); transition: color .8s var(--ease); }
+.h-chrono.is-h .h-step.is-active .h-step__year { color: var(--paper); }
+.h-chrono.is-h .h-step.is-active::before { background: var(--red-soft); }
+.h-chrono.is-h .h-step--today { width: clamp(320px, 30vw, 460px); }
+.h-chrono.is-h .h-chrono__bar { display: block; height: 1px; background: rgba(250, 247, 242, .12); margin-bottom: clamp(2rem, 4vw, 3rem); padding: 0; width: calc(100% - 2 * var(--gutter)); }
+.h-chrono.is-h .h-chrono__bar span { display: block; height: 100%; background: var(--red-soft); transform-origin: left; transform: scaleX(0); }
+
+/* ---------- Récit à image collante ---------- */
+.h-story { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 7rem); }
+.h-story__media { position: relative; }
+.h-story__frame { position: sticky; top: calc(var(--header-h) + 3vh); height: min(76vh, 760px); border-radius: var(--r-lg); overflow: hidden; background: var(--bone-2); }
+.h-story__frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; clip-path: inset(100% 0 0 0); transform: scale(1.12); transition: clip-path 1.1s var(--ease), transform 1.6s var(--ease); }
+.h-story__frame img.is-on { clip-path: inset(0 0 0 0); transform: scale(1); z-index: 1; }
+.h-story__frame img.is-out { clip-path: inset(0 0 0 0); transform: scale(1.04); z-index: 0; }
+.h-story__count { position: sticky; top: calc(var(--header-h) + 3vh + min(76vh, 760px) + 1rem); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; margin-top: 1rem; }
+.h-story__count span { color: var(--ink); }
+.h-chap { min-height: 72vh; display: flex; flex-direction: column; justify-content: center; padding-block: 4vh; transition: opacity .8s var(--ease); }
+.h-story.is-live .h-chap { opacity: .28; }
+.h-story.is-live .h-chap.is-on { opacity: 1; }
+.h-chap .h3 { margin-bottom: 1.2rem; max-width: 20ch; }
+.h-chap > p:not(.eyebrow) { color: var(--ink-2); font-size: 16.5px; line-height: 1.7; max-width: 52ch; margin: 0 0 1rem; }
+.h-chap .link-arrow { align-self: flex-start; margin-top: .8rem; }
+.h-chap__img { display: none; margin: 0 0 1.6rem; border-radius: var(--r); overflow: hidden; aspect-ratio: 4 / 3; }
+.h-chap__img img { width: 100%; height: 100%; object-fit: cover; }
+.h-chap__pills { list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.h-chap__pills li { padding: .5em 1em; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line-2); font-size: 13.5px; }
+
+/* ---------- Valeurs ---------- */
+.h-values__list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+.h-val { position: relative; padding: 2rem 2rem 2.4rem 0; border-bottom: 1px solid var(--line); }
+.h-val:not(:nth-child(3n + 1)) { padding-left: 2rem; border-left: 1px solid var(--line); }
+.h-val__i { font: 400 1.6rem/1 var(--serif); font-style: italic; color: var(--red); }
+.h-val h3 { font-weight: 400; font-size: clamp(1.4rem, 2vw, 1.8rem); letter-spacing: -.03em; margin: 1.4rem 0 .5rem; }
+.h-val p { margin: 0; color: var(--muted); font-size: 15px; }
+.h-val::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px; background: var(--ink); transform: scaleX(0); transform-origin: left; transition: transform .9s var(--ease); }
+.h-val:hover::after { transform: scaleX(1); }
+
+/* ---------- Aujourd'hui ---------- */
+.h-today { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 7rem); align-items: center; }
+.h-today__media { position: relative; padding-bottom: 14%; }
+.h-today__a { margin: 0; border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 4 / 5; width: 78%; }
+.h-today__a img, .h-today__b img { width: 100%; height: 100%; object-fit: cover; }
+.h-today__b { position: absolute; right: 0; bottom: 0; width: 48%; aspect-ratio: 4 / 3; margin: 0; border-radius: var(--r); overflow: hidden; box-shadow: 0 0 0 8px var(--bone); }
+.h-today__text .lead { margin: 1.6rem 0 2.4rem; }
+.h-quote { margin: 0; padding: 1.6rem 0 0; border-top: 1px solid var(--line); }
+.h-quote p { margin: 0 0 .9rem; font: 400 clamp(1.35rem, 2vw, 1.75rem)/1.3 var(--serif); letter-spacing: -.01em; }
+.h-quote footer { font-size: 13.5px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1080px) {
+  .h-figures { grid-template-columns: 1fr; }
+  .h-values__list { grid-template-columns: 1fr 1fr; }
+  .h-val:not(:nth-child(3n + 1)) { padding-left: 0; border-left: 0; }
+  .h-val:nth-child(even) { padding-left: 1.6rem; border-left: 1px solid var(--line); }
+}
+@media (max-width: 900px) {
+  .h-story { grid-template-columns: 1fr; }
+  .h-story__media { display: none; }
+  .h-chap, .h-story.is-live .h-chap { min-height: 0; opacity: 1; padding-block: 0 3.5rem; }
+  .h-chap__img { display: block; }
+  .h-today { grid-template-columns: 1fr; }
+}
+@media (max-width: 780px) {
+  .h-cover { margin-inline: 0; }
+  .h-cover__frame { border-radius: 22px; }
+  .h-cover__cap { padding-inline: var(--gutter); }
+  .h-chrono { margin-inline: 0; border-radius: 22px; }
+}
+@media (max-width: 620px) {
+  .h-figures__grid { grid-template-columns: 1fr; }
+  .h-fig, .h-fig + .h-fig { padding: 1.3rem 0; border-left: 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: .2rem 1rem; }
+  .h-fig dd { grid-row: span 2; margin: 0; }
+  .h-values__list { grid-template-columns: 1fr; }
+  .h-val:nth-child(even) { padding-left: 0; border-left: 0; }
+  .h-val { padding: 1.6rem 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .h-chrono__hint span { animation: none; }
+  .h-story.is-live .h-chap { opacity: 1; }
+}
+
+/* espace insécable préservé dans les titres découpés mot à mot */
+.nw { white-space: nowrap; }

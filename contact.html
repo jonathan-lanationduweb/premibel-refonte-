@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Nos informations &amp; contact — Premibel Parquet</title>
+<meta name="description" content="Une question ? Besoin d’un conseil ? Contactez Premibel Parquet par formulaire, téléphone, WhatsApp ou e-mail. Showrooms à Paris 11e et 15e, entrepôt à Pantin.">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/pages/showrooms.css">
+<link rel="stylesheet" href="assets/css/pages/forms.css">
+<link rel="stylesheet" href="assets/css/pages/contact.css">
+</head>
+<body data-page="contact">
+
+<main id="main">
+  <section class="page-hero container">
+    <nav class="crumbs" aria-label="Fil d’Ariane"><a href="index.html">Accueil</a><span aria-hidden="true">/</span><span>Contact</span></nav>
+    <div class="page-hero__grid">
+      <h1 class="h1 split">Une question&#8239;? <em>Besoin d’un conseil&#8239;?</em></h1>
+      <p class="lead reveal">Notre équipe est à votre écoute pour vous accompagner dans tous vos projets, qu’il s’agisse d’une demande d’information, d’un devis, d’un conseil produit ou d’un suivi de commande.</p>
+    </div>
+  </section>
+
+  <section class="container ct-grid">
+    <div class="ct-main">
+      <div class="ct-intro">
+        <p class="reveal">Chez Premibel, nous attachons une grande importance à la qualité de l’échange. C’est pourquoi nous vous répondons rapidement, de manière claire et personnalisée, afin de vous orienter vers la solution la plus adaptée à votre besoin.</p>
+        <p class="reveal">N’hésitez pas à nous transmettre votre demande via le formulaire ci-dessous&#8239;: un conseiller Premibel Parquet vous recontactera dans les meilleurs délais.</p>
+      </div>
+
+      <div class="ct-form-wrap panel reveal" data-form-wrap>
+        <form class="ct-form" data-contact aria-labelledby="ct-form-title">
+          <h2 class="ct-form__title" id="ct-form-title">Vous souhaitez obtenir <em>davantage de renseignements&#8239;?</em></h2>
+
+          <fieldset class="fgroup" data-required data-msg="Choisissez l’objet de votre demande.">
+            <legend>Objet de votre demande <span class="req" aria-hidden="true">*</span></legend>
+            <div class="opts" data-subject>
+              <label class="opt"><input type="radio" name="objet" value="information" data-label="Information" checked><span>Information</span></label>
+              <label class="opt"><input type="radio" name="objet" value="devis" data-label="Devis"><span>Devis</span></label>
+              <label class="opt"><input type="radio" name="objet" value="conseil" data-label="Conseil produit"><span>Conseil produit</span></label>
+              <label class="opt"><input type="radio" name="objet" value="commande" data-label="Suivi de commande"><span>Suivi de commande</span></label>
+              <label class="opt"><input type="radio" name="objet" value="pro" data-label="Professionnel"><span>Professionnel</span></label>
+            </div>
+          </fieldset>
+          <p class="ct-hint" data-subject-hint aria-live="polite"></p>
+
+          <div class="fields-2">
+            <div class="field"><input id="ct-nom" name="nom" type="text" placeholder=" " required autocomplete="family-name" data-rule="name" data-msg="Indiquez votre nom."><label for="ct-nom">Nom <span class="req" aria-hidden="true">*</span></label></div>
+            <div class="field"><input id="ct-prenom" name="prenom" type="text" placeholder=" " required autocomplete="given-name" data-rule="name" data-msg="Indiquez votre prénom."><label for="ct-prenom">Prénom <span class="req" aria-hidden="true">*</span></label></div>
+          </div>
+          <div class="fields-2">
+            <div class="field"><input id="ct-email" name="email" type="email" placeholder=" " required autocomplete="email" inputmode="email" data-msg="Indiquez votre adresse e-mail."><label for="ct-email">E-mail <span class="req" aria-hidden="true">*</span></label></div>
+            <div class="field"><input id="ct-tel" name="tel" type="tel" placeholder=" " autocomplete="tel" inputmode="tel" data-rule="tel"><label for="ct-tel">Téléphone <small class="muted">(facultatif)</small></label></div>
+          </div>
+          <div class="field" data-order hidden><input id="ct-order" name="commande" type="text" placeholder=" " autocomplete="off"><label for="ct-order">Numéro de commande <small class="muted">(si vous l’avez)</small></label></div>
+          <div class="field" data-company hidden><input id="ct-company" name="societe" type="text" placeholder=" " autocomplete="organization"><label for="ct-company">Nom de la société <small class="muted">(facultatif)</small></label></div>
+          <div class="field"><textarea id="ct-msg" name="message" placeholder=" " required minlength="10" rows="6" data-msg="Écrivez votre message."></textarea><label for="ct-msg">Votre message <span class="req" aria-hidden="true">*</span></label></div>
+
+          <!-- Anti-spam : champ piège invisible (les robots le remplissent, les humains ne le voient pas) -->
+          <div class="ct-hp" aria-hidden="true"><label for="ct-website">Ne pas remplir ce champ</label><input id="ct-website" name="ct_hp_url" type="text" tabindex="-1" autocomplete="off" data-novalidate data-hp></div>
+
+          <div class="check-wrap">
+            <label class="check"><input type="checkbox" name="rgpd" required data-msg="Ce consentement est obligatoire pour pouvoir envoyer votre demande."><span>J’accepte que les informations saisies soient utilisées pour être recontacté(e) conformément à la <a href="legal.html?p=confidentialite">politique de confidentialité</a>. <span class="req" aria-hidden="true">*</span></span></label>
+          </div>
+
+          <div class="ct-form__foot">
+            <p class="muted ct-form__req"><span class="req" aria-hidden="true">*</span> Champs obligatoires</p>
+            <button class="btn btn--dark" type="submit"><span>Envoyer ma demande</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <aside class="ct-side" aria-label="Coordonnées directes">
+      <div class="ct-direct reveal">
+        <p class="eyebrow">En direct</p>
+        <a class="ct-direct__row" href="tel:+33147002510" data-tel>
+          <span class="ct-direct__k">Téléphone</span>
+          <span class="ct-direct__v" data-phone>01 47 00 25 10</span>
+        </a>
+        <a class="ct-direct__row" href="#" data-wa target="_blank" rel="noopener">
+          <span class="ct-direct__k">WhatsApp</span>
+          <span class="ct-direct__v">Écrire à un conseiller</span>
+        </a>
+        <a class="ct-direct__row" href="mailto:contact@premibel.fr" data-mail>
+          <span class="ct-direct__k">E-mail</span>
+          <span class="ct-direct__v" data-email>contact@premibel.fr</span>
+        </a>
+      </div>
+
+      <div class="ct-why reveal">
+        <h3>Pourquoi utiliser <em>notre formulaire&#8239;?</em></h3>
+        <ol>
+          <li>Réponse rapide et personnalisée à vos questions</li>
+          <li>Conseils d’experts adaptés à votre situation</li>
+          <li>Accompagnement dans vos choix et vos démarches</li>
+          <li>Suivi de vos commandes et de vos projets</li>
+          <li>Demande de devis ou de renseignements simplifiée</li>
+        </ol>
+        <div class="ct-why__links">
+          <a class="link-arrow" href="devis.html">Demande de devis détaillée <span aria-hidden="true">→</span></a>
+          <a class="link-arrow" href="rendez-vous.html">Rendez-vous en showroom <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="section container ct-stores" aria-labelledby="ct-stores-title">
+    <div class="head-row">
+      <div><p class="eyebrow reveal">Nous rendre visite</p><h2 class="h2 split" id="ct-stores-title">Nos showrooms et entrepôts <em>en Île-de-France</em></h2></div>
+      <a class="link-arrow reveal" href="magasins.html">Plan et horaires <span aria-hidden="true">→</span></a>
+    </div>
+    <ul class="ct-stores__list" role="list" data-stores></ul>
+  </section>
+</main>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="data/site.js"></script>
+<script src="data/bannieres.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/showrooms.js"></script>
+<script src="assets/js/pages/forms.js"></script>
+<script src="assets/js/pages/contact.js"></script>
+</body>
+</html>

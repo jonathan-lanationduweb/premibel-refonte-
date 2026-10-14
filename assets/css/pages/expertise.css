@@ -1,0 +1,82 @@
+/* ==========================================================================
+   Notre expertise — film qui s'ouvre au scroll, millésime, cartes empilées,
+   transcription « lue » au défilement
+   ========================================================================== */
+
+/* ---------- Film ---------- */
+.x-film { position: relative; }
+.x-film__frame { position: relative; margin-inline: var(--gutter); border-radius: var(--r-lg); overflow: hidden; background: var(--ink); aspect-ratio: 16 / 9; max-height: 86vh; width: auto; will-change: clip-path; }
+.x-film__video { width: 100%; height: 100%; object-fit: cover; background: var(--ink); }
+.x-film__play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 1.1rem; color: var(--paper); background: linear-gradient(180deg, rgba(20, 16, 13, 0) 40%, rgba(20, 16, 13, .45)); transition: opacity .5s var(--ease); }
+.x-film__disc { width: clamp(72px, 9vw, 112px); aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; background: rgba(250, 247, 242, .92); color: var(--ink); backdrop-filter: blur(8px); transition: transform .6s var(--ease), background .4s; box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .5); }
+.x-film__disc svg { width: 32%; height: 32%; fill: currentColor; margin-left: 6%; }
+.x-film__play:hover .x-film__disc { transform: scale(1.08); }
+.x-film__play:active .x-film__disc { transform: scale(.96); transition-duration: .15s; }
+.x-film__label { font-size: 15px; font-weight: 500; text-shadow: 0 1px 12px rgba(0, 0, 0, .4); }
+.x-film__label small { display: block; font-weight: 400; opacity: .75; font-variant-numeric: tabular-nums; }
+.x-film.is-playing .x-film__play { opacity: 0; pointer-events: none; }
+.x-film__meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 0 auto; padding-top: 1.4rem; }
+.x-film__meta div { border-top: 1px solid var(--line); padding-top: .9rem; }
+.x-film__meta dt { font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.x-film__meta dd { margin: .3rem 0 0; font-size: 15px; }
+
+/* ---------- Description + millésime ---------- */
+.x-desc { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(2rem, 6vw, 7rem); align-items: start; }
+.x-desc__big { position: sticky; top: calc(var(--header-h) + 4vh); display: flex; flex-direction: column; }
+.x-desc__since { font: italic 400 clamp(1.8rem, 3vw, 2.8rem)/1 var(--serif); color: var(--red); margin-bottom: .2em; }
+.x-desc__year { font: 300 clamp(6rem, 17vw, 16rem)/.82 var(--sans); letter-spacing: -.07em; font-variant-numeric: tabular-nums; display: flex; overflow: hidden; padding-bottom: .04em; }
+.x-desc__year .x-dig { display: inline-block; }
+.x-desc__text .lead { margin: 1.6rem 0 1.2rem; }
+.x-desc__p { color: var(--ink-2); max-width: 56ch; margin: 0 0 2rem; }
+.x-checks { list-style: none; padding: 0; margin: 0 0 2.4rem; border-top: 1px solid var(--line); }
+.x-checks li { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); font-size: 16px; }
+.x-checks li::before { content: ""; flex: none; width: 22px; height: 1px; background: var(--red); }
+
+/* ---------- Cartes empilées ---------- */
+.x-keys { background: var(--bone-2); border-radius: var(--r-lg); margin-inline: var(--gutter); }
+.x-keys__aside { margin: 0; max-width: 30ch; }
+.x-stack { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.2rem; }
+.x-card { display: grid; grid-template-columns: 1fr 1.1fr; background: var(--paper); border-radius: var(--r-lg); overflow: hidden; min-height: clamp(380px, 60vh, 560px); transform-origin: 50% 0; box-shadow: 0 -1px 0 rgba(29, 25, 22, .04), 0 30px 60px -40px rgba(29, 25, 22, .35); }
+.x-card__text { padding: clamp(1.6rem, 4vw, 3.4rem); display: flex; flex-direction: column; justify-content: flex-end; gap: .8rem; }
+.x-card__n { font: italic 400 1.6rem/1 var(--serif); color: var(--red); margin-bottom: auto; }
+.x-card__text .h3 { max-width: 16ch; }
+.x-card__text p { margin: 0; color: var(--ink-2); max-width: 38ch; font-size: 16.5px; }
+.x-card__text .link-arrow { align-self: flex-start; margin-top: .6rem; }
+.x-card__fig { margin-top: 1rem; font: 400 clamp(2.4rem, 4vw, 3.6rem)/1 var(--sans); letter-spacing: -.05em; }
+.x-card__fig small { font-size: 14px; letter-spacing: 0; color: var(--muted); }
+.x-card__media { position: relative; overflow: hidden; }
+.x-card { position: relative; }
+.x-card::after { content: ""; position: absolute; inset: 0; background: var(--ink); opacity: var(--dim, 0); pointer-events: none; border-radius: inherit; }
+.x-card__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- Transcription ---------- */
+.x-trans { display: grid; grid-template-columns: 1fr 1.6fr; gap: clamp(2rem, 6vw, 7rem); align-items: start; }
+.x-trans__head { position: sticky; top: calc(var(--header-h) + 4vh); }
+.x-trans__head .muted { max-width: 36ch; margin: 1.4rem 0 0; }
+.x-line { padding: 0 0 clamp(2.4rem, 5vw, 4rem); }
+.x-line h3 { margin: 0 0 .9rem; font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: .7rem; }
+.x-line h3::before { content: ""; width: 18px; height: 1px; background: var(--red); }
+.x-line p { margin: 0; font: 400 clamp(1.35rem, 2.3vw, 2.05rem)/1.32 var(--sans); letter-spacing: -.025em; color: var(--ink); }
+.x-line p .xw { opacity: .16; transition: none; }
+
+/* ---------- Responsive ---------- */
+@media (min-width: 901px) {
+  .x-stack .x-card { position: sticky; top: calc(var(--header-h) + 2rem + var(--i, 0) * 16px); }
+}
+@media (max-width: 900px) {
+  .x-desc, .x-trans { grid-template-columns: 1fr; }
+  .x-desc__big, .x-trans__head { position: static; }
+  .x-desc__big { flex-direction: row; align-items: baseline; gap: 1rem; }
+  .x-card { grid-template-columns: 1fr; min-height: 0; }
+  .x-card__media { aspect-ratio: 16 / 10; order: -1; }
+  .x-card__n { margin-bottom: .4rem; }
+  .x-film__meta { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 780px) {
+  .x-film__frame { margin-inline: 0; border-radius: 22px; }
+  .x-keys { margin-inline: 0; border-radius: 22px; }
+  .x-film__label { display: none; }
+}
+
+/* espace insécable préservé dans les titres découpés mot à mot */
+.nw { white-space: nowrap; }

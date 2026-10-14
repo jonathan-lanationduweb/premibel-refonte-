@@ -1,0 +1,44 @@
+<!doctype html>
+<!--
+  GABARIT DE PAGE — copier ce fichier pour créer une nouvelle page.
+  - En-tête, méga-menu, recherche, panier, pied de page et WhatsApp sont injectés par assets/js/core.js
+  - data-page : identifiant de la page ; data-footer="none" pour masquer le pied de page
+  - Styles spécifiques : assets/css/pages/<page>.css ; script spécifique : assets/js/pages/<page>.js
+  - Données disponibles : data/site.js (toujours), products/categories/posts/realisations/site-images (au besoin)
+-->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Titre de la page — Premibel Parquet</title>
+<meta name="description" content="">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/pages/NOM.css">
+</head>
+<body data-page="NOM">
+
+<main id="main">
+  <section class="page-hero container">
+    <nav class="crumbs" aria-label="Fil d’Ariane"><a href="index.html">Accueil</a><span aria-hidden="true">/</span><span>Titre</span></nav>
+    <div class="page-hero__grid">
+      <h1 class="h1 split">Titre <em>en italique</em></h1>
+      <p class="lead reveal">Chapô de la page.</p>
+    </div>
+  </section>
+</main>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="data/site.js"></script>
+<script src="data/bannieres.js"></script>
+<!-- <script src="data/products.js"></script> <script src="data/categories.js"></script> si la page affiche des produits -->
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/NOM.js"></script>
+</body>
+</html>

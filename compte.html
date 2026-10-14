@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mon compte — Premibel Parquet</title>
+<meta name="description" content="Connectez-vous ou créez votre compte Premibel, particulier ou professionnel : suivi des commandes, factures, informations enregistrées, espace sécurisé.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/pages/info.css">
+<link rel="stylesheet" href="assets/css/pages/forms.css">
+<link rel="stylesheet" href="assets/css/pages/compte.css">
+</head>
+<body data-page="compte">
+
+<main id="main">
+  <!-- ================= Connexion / inscription ================= -->
+  <div class="container acct" data-auth>
+    <div class="acct__visual media-reveal">
+      <img src="assets/img/site/salon.webp" alt="" loading="eager">
+      <p class="eyebrow" style="color:rgba(250,247,242,.7)">Espace client</p>
+      <h2 class="h2" data-bens-title>Tout pour gérer <em>vos achats.</em></h2>
+      <p class="acct__bens-lead" data-bens-lead hidden>Commencez en moins d’une minute et découvrez tous les avantages de votre espace personnel.</p>
+      <ul class="bens" data-bens role="list"></ul>
+    </div>
+
+    <div class="acct__card">
+      <nav class="crumbs" aria-label="Fil d’Ariane"><a href="index.html">Accueil</a><span aria-hidden="true">/</span><span>Mon compte</span></nav>
+      <h1 class="acct__title" data-acct-title>Connexion</h1>
+      <p class="acct__sub" data-acct-sub>Accédez à votre espace client, suivez vos commandes et factures en toute sécurité.</p>
+
+      <div class="seg seg--slide" role="tablist" aria-label="Connexion ou inscription" data-tabs>
+        <button type="button" role="tab" id="tab-login" aria-controls="pane-login" aria-selected="true" data-tab="login">Connexion</button>
+        <button type="button" role="tab" id="tab-signup" aria-controls="pane-signup" aria-selected="false" tabindex="-1" data-tab="signup">Inscription</button>
+      </div>
+
+      <div class="acct__panes">
+        <!-- Connexion -->
+        <section class="pane" id="pane-login" role="tabpanel" aria-labelledby="tab-login" data-pane="login">
+          <form data-form="login" aria-label="Connexion">
+            <div class="field"><input id="li-email" name="email" type="email" placeholder=" " autocomplete="email" inputmode="email" required data-msg="Saisissez votre adresse e-mail."><label for="li-email">Adresse e-mail</label></div>
+            <div class="field pwd"><input id="li-pwd" name="password" type="password" placeholder=" " autocomplete="current-password" required data-msg="Saisissez votre mot de passe."><label for="li-pwd">Mot de passe</label><button class="pwd__toggle" type="button" data-pwd aria-controls="li-pwd" aria-pressed="false">Afficher</button></div>
+            <div class="row-between">
+              <label class="check" style="margin:0"><input type="checkbox" name="remember" data-novalidate> Rester connecté</label>
+              <button class="text-btn" type="button" data-forgot-open>Mot de passe oublié ?</button>
+            </div>
+            <button class="btn btn--dark btn--block" type="submit"><span>Se connecter</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <p class="or" aria-hidden="true"><span>ou</span></p>
+            <button class="btn btn--line btn--block gbtn" type="button" data-google><span class="gbtn__g" data-g-ico></span><span>Continuer avec Google</span></button>
+            <p class="acct__switch">Vous n’avez pas de compte&#8239;? <button class="text-btn" type="button" data-go="signup">Inscrivez-vous ici</button></p>
+          </form>
+        </section>
+
+        <!-- Mot de passe oublié -->
+        <section class="pane" id="pane-forgot" data-pane="forgot" hidden aria-labelledby="forgot-title">
+          <form data-form="forgot" aria-labelledby="forgot-title">
+            <h2 class="h3" id="forgot-title" style="margin-bottom:.6rem">Mot de passe oublié</h2>
+            <p class="pane__lead">Indiquez l’adresse e-mail de votre compte&#8239;: vous recevrez un lien pour choisir un nouveau mot de passe.</p>
+            <div class="field"><input id="fg-email" name="email" type="email" placeholder=" " autocomplete="email" required data-msg="Saisissez votre adresse e-mail."><label for="fg-email">Adresse e-mail</label></div>
+            <button class="btn btn--dark btn--block" type="submit"><span>Recevoir le lien</span></button>
+            <p style="text-align:center;margin:1rem 0 0"><button class="text-btn" type="button" data-forgot-close>← Retour à la connexion</button></p>
+          </form>
+        </section>
+
+        <!-- Inscription (2 étapes) -->
+        <section class="pane" id="pane-signup" role="tabpanel" aria-labelledby="tab-signup" data-pane="signup" hidden>
+          <form data-form="signup" aria-label="Créer mon compte">
+            <ol class="su-steps" aria-label="Étapes de l’inscription">
+              <li class="is-current" data-su-dot="1"><span>1</span>Vos identifiants</li>
+              <li data-su-dot="2"><span>2</span>Vos informations</li>
+            </ol>
+
+            <!-- Étape 1 -->
+            <div class="su-step" data-su-step="1">
+              <h2 class="sr-only" tabindex="-1" data-su-title>Étape 1 : vos identifiants</h2>
+              <label class="pro-toggle">
+                <input type="checkbox" name="pro" data-novalidate data-pro-toggle>
+                <span><b>Je suis un professionnel</b><small>Activez les informations professionnelles à l’étape suivante.</small></span>
+              </label>
+              <fieldset class="fgroup" data-required data-msg="Choisissez une civilité.">
+                <legend>Civilité <span class="req" aria-hidden="true">*</span></legend>
+                <div class="opts">
+                  <label class="opt"><input type="radio" name="civ" value="Monsieur"><span>Monsieur</span></label>
+                  <label class="opt"><input type="radio" name="civ" value="Madame"><span>Madame</span></label>
+                  <label class="opt"><input type="radio" name="civ" value="Autre"><span>Autre</span></label>
+                </div>
+              </fieldset>
+              <div class="fields-2">
+                <div class="field"><input id="su-last" name="last" type="text" placeholder=" " autocomplete="family-name" required data-rule="name" data-msg="Indiquez votre nom."><label for="su-last">Nom <span class="req" aria-hidden="true">*</span></label></div>
+                <div class="field"><input id="su-first" name="first" type="text" placeholder=" " autocomplete="given-name" required data-rule="name" data-msg="Indiquez votre prénom."><label for="su-first">Prénom <span class="req" aria-hidden="true">*</span></label></div>
+              </div>
+              <div class="field"><input id="su-email" name="email" type="email" placeholder=" " autocomplete="email" inputmode="email" required data-msg="Indiquez votre adresse e-mail."><label for="su-email">E-mail <span class="req" aria-hidden="true">*</span></label></div>
+              <div class="field pwd"><input id="su-pwd" name="password" type="password" placeholder=" " autocomplete="new-password" required minlength="8" aria-describedby="su-meter-l" data-msg="Créez un mot de passe."><label for="su-pwd">Mot de passe <span class="req" aria-hidden="true">*</span></label><button class="pwd__toggle" type="button" data-pwd aria-controls="su-pwd" aria-pressed="false">Afficher</button></div>
+              <div class="meter" data-meter aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+              <p class="meter-l" id="su-meter-l" data-meter-l>8 caractères minimum.</p>
+              <button class="btn btn--dark btn--block" type="button" data-su-next><span>Continuer</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+              <p class="or" aria-hidden="true"><span>ou</span></p>
+              <button class="btn btn--line btn--block gbtn" type="button" data-google><span class="gbtn__g" data-g-ico></span><span>Continuer avec Google</span></button>
+              <p class="acct__switch">Vous avez déjà un compte&#8239;? <button class="text-btn" type="button" data-go="login">Se connecter</button></p>
+              <p class="muted su-req"><span class="req" aria-hidden="true">*</span> Champs obligatoires</p>
+            </div>
+
+            <!-- Étape 2 -->
+            <div class="su-step" data-su-step="2" hidden>
+              <h2 class="sr-only" tabindex="-1" data-su-title>Étape 2 : vos informations</h2>
+              <p class="pane__lead">Ces informations nous permettent de préparer votre espace client.</p>
+              <h3 class="su-h">Informations personnelles</h3>
+              <div class="fields-2">
+                <div class="field"><input id="su-tel" name="tel" type="tel" placeholder=" " autocomplete="tel" inputmode="tel" required data-rule="tel" data-msg="Indiquez votre numéro de téléphone."><label for="su-tel">Téléphone <span class="req" aria-hidden="true">*</span></label></div>
+                <div class="field field--date"><input id="su-birth" name="birth" type="date" placeholder=" " autocomplete="bday"><label for="su-birth">Date de naissance</label></div>
+              </div>
+              <div class="field"><input id="su-addr" name="address" type="text" placeholder=" " autocomplete="street-address"><label for="su-addr">Adresse</label></div>
+              <div class="fields-2">
+                <div class="field"><input id="su-city" name="city" type="text" placeholder=" " autocomplete="address-level2"><label for="su-city">Ville</label></div>
+                <div class="field"><input id="su-cp" name="cp" type="text" placeholder=" " autocomplete="postal-code" inputmode="numeric" maxlength="5" data-rule="cp"><label for="su-cp">Code postal</label></div>
+              </div>
+
+              <div class="pro-fields" data-pro-fields aria-hidden="true">
+                <div>
+                  <h3 class="su-h">Informations professionnelles</h3>
+                  <p class="su-note">Ces éléments servent uniquement à valider votre compte professionnel.</p>
+                  <div class="fields-2">
+                    <div class="field"><input id="su-siren" name="siren" type="text" inputmode="numeric" placeholder=" " data-pro data-pattern="siren" disabled><label for="su-siren">Numéro SIREN</label><p class="field__hint">Ex.&#8239;: 123 456 789</p></div>
+                    <div class="field"><input id="su-siret" name="siret" type="text" inputmode="numeric" placeholder=" " data-pro data-pattern="siret" disabled><label for="su-siret">Numéro SIRET</label><p class="field__hint">Ex.&#8239;: 123 456 789 00012</p></div>
+                  </div>
+                  <div class="fields-2">
+                    <div class="field"><input id="su-company" name="company" type="text" placeholder=" " autocomplete="organization" data-pro disabled><label for="su-company">Nom de l’entreprise</label></div>
+                    <div class="field"><input id="su-ape" name="ape" type="text" placeholder=" " data-pro data-pattern="ape" maxlength="6" disabled><label for="su-ape">Code APE</label><p class="field__hint">Ex.&#8239;: 4333Z</p></div>
+                  </div>
+                  <div class="su-files">
+                    <div>
+                      <p class="flabel">Fichier KBIS <small>PDF, JPG ou PNG</small></p>
+                      <label class="drop drop--sm" data-drop="kbis">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5l-7.8 7.8a5 5 0 0 1-7.1-7.1l8.2-8.2a3.4 3.4 0 0 1 4.8 4.8l-8.1 8.1a1.7 1.7 0 0 1-2.4-2.4l7.4-7.4"/></svg>
+                        <b>Déposer le KBIS</b>
+                        <small>ou cliquez pour parcourir</small>
+                        <input type="file" name="kbis" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" aria-label="Ajouter le fichier KBIS" data-pro disabled>
+                      </label>
+                      <ul class="files" data-files="kbis"></ul>
+                      <p class="field__hint">Document utilisé pour valider votre statut professionnel.</p>
+                    </div>
+                    <div>
+                      <p class="flabel">Carte d’identité <small>PDF, JPG ou PNG</small></p>
+                      <label class="drop drop--sm" data-drop="cni">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5l-7.8 7.8a5 5 0 0 1-7.1-7.1l8.2-8.2a3.4 3.4 0 0 1 4.8 4.8l-8.1 8.1a1.7 1.7 0 0 1-2.4-2.4l7.4-7.4"/></svg>
+                        <b>Déposer la pièce d’identité</b>
+                        <small>ou cliquez pour parcourir</small>
+                        <input type="file" name="cni" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" aria-label="Ajouter la carte d’identité" data-pro disabled>
+                      </label>
+                      <ul class="files" data-files="cni"></ul>
+                      <p class="field__hint">Justificatif demandé pour sécuriser la validation du compte.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="check-wrap">
+                <label class="check"><input type="checkbox" name="cgv" required data-msg="Merci d’accepter les conditions pour créer votre compte."><span>J’accepte les <a href="legal.html?p=cgv">conditions générales</a> et la <a href="legal.html?p=confidentialite">politique de confidentialité</a>. <span class="req" aria-hidden="true">*</span></span></label>
+              </div>
+              <div class="su-foot">
+                <button class="back" type="button" data-su-prev><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Retour</button>
+                <button class="btn btn--dark" type="submit"><span data-signup-label>Créer mon compte</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+
+      <div class="acct__pro">
+        <p>Professionnel du bâtiment ou de l’aménagement&#8239;?</p>
+        <a class="link-arrow" href="pro.html">Pro&#8239;? Guide inscription <span>→</span></a>
+      </div>
+      <p class="mock-note">Maquette&#8239;: aucune donnée n’est envoyée. La connexion ouvre un espace client de démonstration.</p>
+    </div>
+  </div>
+
+  <!-- ================= Espace client (démonstration) ================= -->
+  <section class="container dash" data-dash hidden aria-labelledby="dash-title"></section>
+</main>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="data/site.js"></script>
+<script src="data/bannieres.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/info.js"></script>
+<script src="assets/js/pages/forms.js"></script>
+<script src="assets/js/pages/compte.js"></script>
+</body>
+</html>

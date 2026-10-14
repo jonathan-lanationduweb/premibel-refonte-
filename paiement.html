@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Paiement en plusieurs fois avec Alma — Premibel Parquet</title>
+<meta name="description" content="Réglez votre parquet en 2×, 3× ou 4× avec Alma, dès 200 € d’achat HT et jusqu’à 4 000 € selon éligibilité. Simulez vos échéances et découvrez nos moyens de paiement sécurisés.">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/pages/info.css">
+</head>
+<body data-page="paiement">
+
+<main id="main">
+  <section class="page-hero info-hero container">
+    <nav class="crumbs" aria-label="Fil d’Ariane"><a href="index.html">Accueil</a><span aria-hidden="true">/</span><span>Paiement en plusieurs fois</span></nav>
+    <div class="page-hero__grid">
+      <h1 class="h1 split">Payez votre parquet <em>en plusieurs fois.</em></h1>
+      <div class="info-hero__aside">
+        <span class="alma-mark reveal"><img src="assets/img/site/alma-couleur.webp" alt="Alma" width="150" height="50">Partenaire de paiement</span>
+        <p class="lead reveal">Avec Alma, Premibel vous permet de régler vos achats en 2×, 3× ou 4×, dès 200 € d’achat HT, pour concrétiser plus facilement votre projet parquet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simulateur -->
+  <section class="container" aria-labelledby="sim-title">
+    <div class="panel sim reveal" style="margin:0">
+      <div class="sim__in">
+        <div>
+          <p class="eyebrow">Simulateur</p>
+          <h2 class="h3" id="sim-title">Combien par échéance ?</h2>
+        </div>
+        <div>
+          <label class="sim__label" for="sim-amount">Montant de votre commande TTC</label>
+          <div class="sim__amount"><input id="sim-amount" type="number" inputmode="decimal" min="0" max="10000" step="1" value="1500" data-sim-input aria-describedby="sim-elig"><span aria-hidden="true">€</span></div>
+        </div>
+        <div>
+          <input class="range" type="range" min="0" max="5000" step="10" value="1500" data-sim-range aria-label="Ajuster le montant">
+          <div class="range__ticks" aria-hidden="true"><span>0 €</span><span>2 500 €</span><span>5 000 €</span></div>
+        </div>
+        <div class="sim__presets" aria-label="Montants rapides">
+          <button class="chip" type="button" data-preset="480">480 €</button>
+          <button class="chip" type="button" data-preset="1200">1 200 €</button>
+          <button class="chip" type="button" data-preset="2400">2 400 €</button>
+          <button class="chip" type="button" data-preset="3600">3 600 €</button>
+        </div>
+        <p class="sim__elig" id="sim-elig" data-sim-elig aria-live="polite"></p>
+      </div>
+      <div class="sim__out">
+        <div class="plans" role="radiogroup" aria-label="Nombre d’échéances" data-plans>
+          <button class="plan" type="button" role="radio" aria-checked="false" data-n="2"><span class="plan__x">2×</span><span class="plan__v num" data-plan-v>—</span><span class="plan__s">par échéance</span></button>
+          <button class="plan" type="button" role="radio" aria-checked="true" data-n="3"><span class="plan__x">3×</span><span class="plan__v num" data-plan-v>—</span><span class="plan__s">par échéance</span></button>
+          <button class="plan" type="button" role="radio" aria-checked="false" data-n="4"><span class="plan__x">4×</span><span class="plan__v num" data-plan-v>—</span><span class="plan__s">par échéance</span></button>
+        </div>
+        <div>
+          <div class="sched__total">
+            <span class="sched__big num" data-sched-big aria-live="polite">—</span>
+            <span class="sched__fee">Sans frais</span>
+          </div>
+          <p class="note" data-sched-cap style="margin:.4rem 0 0"></p>
+        </div>
+        <div class="sched__bars" data-bars aria-label="Échéancier"></div>
+        <p class="note" style="margin:0">Simulation indicative. Le paiement en plusieurs fois est proposé sous réserve d’acceptation par Alma ; l’échéancier exact vous est affiché avant validation de votre commande. Les modalités peuvent varier selon le montant, le pays, le moyen de paiement utilisé et les conditions d’acceptation d’Alma.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-sec">
+      <div class="split-sec__head">
+        <p class="eyebrow">Un paiement plus souple</p>
+        <h2 class="h2 split">Choisissez le rythme <em>qui vous convient.</em></h2>
+      </div>
+      <div class="prose reveal" style="max-width:62ch">
+        <p>Un projet parquet représente souvent un investissement important : choix du sol, accessoires de pose, livraison, finitions ou rénovation complète d’une pièce.</p>
+        <p>Pour vous accompagner, Premibel propose le paiement en plusieurs fois avec Alma, directement au moment du règlement de votre commande éligible. Réglez votre commande en plusieurs échéances, jusqu’à 4 000 € selon éligibilité, avec un paiement clair, sécurisé et affiché avant validation.</p>
+        <ol class="rules" style="margin-top:2rem">
+          <li><div><b>En 2×</b><p>Une solution simple pour répartir votre paiement en deux échéances.</p></div></li>
+          <li><div><b>En 3×</b><p>Idéal pour lisser le budget d’un projet parquet plus complet.</p></div></li>
+          <li><div><b>En 4×</b><p>Une option pratique pour les projets plus importants ou les grandes surfaces.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight container">
+    <div class="head-row">
+      <div>
+        <p class="eyebrow">Comment payer avec Alma ?</p>
+        <h2 class="h2 split">Quatre étapes, <em>au moment du règlement.</em></h2>
+      </div>
+      <a class="link-arrow" href="commande.html">Comment passer commande <span>→</span></a>
+    </div>
+    <ol class="steps4">
+      <li class="reveal"><b>Choisissez vos produits</b><p>Sélectionnez votre parquet, vos accessoires ou vos produits de pose sur Premibel.</p></li>
+      <li class="reveal"><b>Validez votre panier</b><p>Vérifiez les quantités, les références et les informations liées à votre projet.</p></li>
+      <li class="reveal"><b>Sélectionnez Alma</b><p>Au moment du paiement, choisissez Alma si l’option est disponible pour votre commande.</p></li>
+      <li class="reveal"><b>Payez en plusieurs fois</b><p>Alma vous indique clairement les échéances avant la validation définitive.</p></li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <div class="container split-sec">
+      <div class="split-sec__head">
+        <p class="eyebrow">Informations importantes</p>
+        <h2 class="h2 split">Avant de <em>valider.</em></h2>
+        <p class="lead reveal">Le paiement en plusieurs fois est proposé sous réserve d’acceptation par Alma et selon les conditions applicables au moment de la commande.</p>
+      </div>
+      <div class="infos">
+        <div class="reveal"><h3>Éligibilité</h3><ul class="ticks"><li>Paiement possible en 2×, 3× ou 4× avec Alma dès 200 € d’achat HT.</li><li>Montant éligible jusqu’à 4 000 € selon les conditions Alma.</li><li>Option disponible directement au moment du paiement.</li><li>Validation soumise à l’acceptation d’Alma.</li></ul></div>
+        <div class="reveal"><h3>Sécurité</h3><ul class="ticks"><li>Paiement sécurisé via Alma.</li><li>Échéancier affiché avant validation.</li><li>Conditions indiquées avant confirmation.</li><li>Commande prise en compte après validation du paiement.</li></ul></div>
+        <div class="reveal"><h3>Produits concernés</h3><p>Le paiement Alma peut concerner vos achats de parquet massif, parquet contrecollé, sol stratifié, lames de terrasse, accessoires, colles, plinthes ou produits de finition, selon l’éligibilité de votre commande.</p></div>
+        <div class="reveal"><h3>Commandes &amp; CGV</h3><p>Les conditions générales de vente Premibel restent applicables à toute commande. Nous vous invitons à les consulter avant de valider votre achat.</p><p style="margin-top:1rem"><a class="link-arrow" href="legal.html?p=cgv">Voir les conditions <span>→</span></a></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel panel--ink secure on-dark" aria-labelledby="secure-title">
+    <div class="secure__head">
+      <div>
+        <p class="eyebrow">Paiement 100 % sécurisé</p>
+        <h2 class="h2 split" id="secure-title">Vos données bancaires <em>ne transitent pas</em> par notre site.</h2>
+      </div>
+      <p class="reveal">Toutes vos transactions sont protégées par un protocole SSL garantissant la confidentialité de vos données bancaires. Elles ne sont jamais stockées sur nos serveurs : elles sont traitées directement par nos partenaires de paiement sécurisés.</p>
+    </div>
+    <div class="methods">
+      <div class="method reveal"><small>SystemPay · Up2Pay</small><b>Carte bancaire</b><p>Visa, Mastercard et CB sont traitées par des solutions bancaires françaises conformes aux standards PCI-DSS. Vos coordonnées sont chiffrées et transmises directement à la banque.</p></div>
+      <div class="method reveal"><small>Alma</small><b>2×, 3× ou 4×</b><p>Une solution conforme aux plus hautes normes de sécurité (PCI-DSS niveau 1), qui ne partage jamais vos données bancaires. Un paiement flexible, transparent et sans frais cachés.</p></div>
+      <div class="method reveal"><small>PayPal</small><b>Compte PayPal</b><p>Payez sans communiquer vos coordonnées bancaires, avec votre compte PayPal ou par carte via la plateforme. La transaction est instantanée.</p></div>
+      <div class="method reveal"><small>Virement</small><b>Virement bancaire</b><p>Nos coordonnées bancaires vous sont transmises à la validation de votre commande. La préparation débute dès réception du paiement.</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container faq-wrap">
+      <div>
+        <p class="eyebrow">Questions fréquentes</p>
+        <h2 class="h2 split">Alma, <em>en clair.</em></h2>
+      </div>
+      <div class="faq reveal">
+        <details><summary>Le paiement Alma est-il disponible pour tous les produits ?</summary><div class="faq__a"><p>Le paiement en plusieurs fois dépend du montant de votre commande et des conditions d’éligibilité d’Alma. Si votre panier est éligible, l’option apparaît au moment du paiement.</p></div></details>
+        <details><summary>Est-ce que je peux payer en 2×, 3× ou 4× ?</summary><div class="faq__a"><p>Oui, Premibel propose le paiement en 2×, 3× ou 4× avec Alma, selon les conditions affichées au moment du règlement.</p></div></details>
+        <details><summary>Y a-t-il des frais cachés ?</summary><div class="faq__a"><p>Les informations de paiement sont présentées clairement avant validation. Vous connaissez les échéances et les conditions avant de confirmer votre achat.</p></div></details>
+        <details><summary>Quand ma commande est-elle validée ?</summary><div class="faq__a"><p>Votre commande est prise en compte après validation du paiement, conformément aux conditions générales de vente Premibel.</p></div></details>
+        <details><summary>Où consulter les conditions de vente Premibel ?</summary><div class="faq__a"><p>Vous pouvez consulter les <a class="inline-link" href="legal.html?p=cgv">conditions générales de vente Premibel</a> directement sur le site.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <div data-cta data-title="Prêt à concrétiser <em>votre projet parquet ?</em>" data-text="Le paiement en plusieurs fois vous sera proposé au moment du règlement si votre commande est éligible." data-img="assets/img/site/salon.webp"></div>
+</main>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="data/site.js"></script>
+<script src="data/bannieres.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/info.js"></script>
+<script src="assets/js/pages/paiement.js"></script>
+</body>
+</html>

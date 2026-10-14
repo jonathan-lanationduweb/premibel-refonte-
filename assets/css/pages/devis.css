@@ -1,0 +1,154 @@
+/* ==========================================================================
+   Demande de devis parquet en ligne
+   ========================================================================== */
+.dv-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: clamp(2rem, 5vw, 5rem); align-items: start; border-top: 1px solid var(--line); padding-top: clamp(2rem, 4vw, 3rem); }
+.dv-form { min-width: 0; }
+.dv-half { max-width: 420px; }
+.dv-sub { margin-top: 1rem; }
+
+/* Surface */
+.dv-surface { display: flex; gap: .8rem; align-items: flex-start; max-width: 460px; }
+.dv-surface .field { flex: 1; }
+.dv-surface .field input { font-size: 1.3rem; letter-spacing: -.02em; }
+.dv-steppers { display: flex; gap: .4rem; padding-top: 3px; }
+.dv-steppers .round-btn { font-size: 13.5px; font-variant-numeric: tabular-nums; }
+.dv-checks { display: flex; flex-wrap: wrap; gap: .8rem 2rem; margin: .6rem 0 0; }
+.dv-checks .check { min-height: 44px; align-items: center; }
+
+
+.dv-cp { grid-template-columns: 180px 1fr; }
+.dv-zone { display: flex; gap: .6rem; align-items: center; font-size: 13.5px; color: var(--ink-2); margin: -.2rem 0 1rem; }
+.dv-zone:empty { display: none; }
+.dv-zone svg { width: 20px; height: 20px; fill: none; stroke: var(--ok); stroke-width: 1.4; flex: none; }
+.dv-zone a { text-decoration: underline; text-underline-offset: 3px; }
+.dv-form .drop { margin-bottom: .2rem; }
+.dv-form .files { margin-bottom: 1.4rem; }
+
+/* Aide latérale */
+.dv-aside { position: sticky; top: calc(var(--header-h) + 24px); background: var(--paper); border-radius: var(--r-lg); overflow: hidden; }
+.dv-aside__body { padding: 1.4rem 1.5rem 1.6rem; display: grid; gap: 1rem; justify-items: start; }
+.dv-aside__body .eyebrow { margin: 0; }
+.dv-aside__body p:not(.eyebrow) { margin: 0; color: var(--ink-2); font-size: 15px; }
+
+@media (max-width: 1100px) {
+  .dv-layout { grid-template-columns: 1fr; }
+  .dv-aside { position: static; display: grid; grid-template-columns: minmax(0, 1.2fr) 1fr; align-items: start; }
+}
+@media (max-width: 680px) {
+  .dv-aside { grid-template-columns: 1fr; }
+  .dv-cp { grid-template-columns: 1fr; }
+  .dv-half, .dv-surface { max-width: none; }
+}
+.dv-aside .link-arrow { min-height: 44px; align-items: center; }
+
+/* ==========================================================================
+   Étape « Produits » : catalogue intégré + sélection (parité site en ligne)
+   ========================================================================== */
+.dv-usp { list-style: none; margin: 0 0 1.6rem; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; font-size: 13.5px; color: var(--ink-2); }
+.dv-usp li { display: flex; align-items: center; gap: .4rem; }
+.dv-usp svg { width: 16px; height: 16px; fill: none; stroke: var(--ok); stroke-width: 1.8; }
+
+.dv-sel { padding: 1.2rem 1.3rem; border-radius: var(--r); background: var(--paper); margin-bottom: 1.4rem; }
+.dv-sel__head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.dv-sel__t { margin: 0; font-weight: 500; font-size: 15.5px; display: flex; align-items: center; gap: .55rem; }
+.dv-sel__n { min-width: 24px; height: 24px; padding: 0 .4rem; border-radius: 999px; background: var(--ink); color: var(--paper); font-size: 12.5px; display: inline-grid; place-items: center; font-variant-numeric: tabular-nums; }
+.dv-sel__clear { min-height: 40px; font-size: 13px; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+.dv-sel__clear:hover { color: var(--red); }
+.dv-sel__clear[hidden], .dv-sel__empty[hidden], .dv-sel__tot[hidden] { display: none; }
+.dv-sel__empty { margin: .6rem 0 0; font-size: 14px; color: var(--muted); }
+.dv-sel__tot { margin: .8rem 0 0; font-size: 13.5px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.dv-sel .field__err { margin-top: .6rem; }
+.dv-picked { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+.dv-picked:not(:empty) { margin-top: 1rem; }
+.dv-pick { display: grid; grid-template-columns: 56px minmax(0, 1fr) 110px 40px; gap: .8rem; align-items: center; padding: .55rem; border-radius: 14px; background: var(--bone); overflow: hidden; }
+.dv-pick img { width: 56px; height: 56px; border-radius: 10px; object-fit: cover; background: var(--bone-2); }
+.dv-pick__t { display: grid; gap: .1rem; min-width: 0; }
+.dv-pick__t a { font-weight: 500; font-size: 14px; line-height: 1.3; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.dv-pick__t a:hover { color: var(--red); }
+.dv-pick__t small { color: var(--muted); font-size: 12.5px; }
+.dv-pick__t .dv-pick__calc { color: var(--ok); font-weight: 500; font-variant-numeric: tabular-nums; }
+.dv-pick__m2.field { margin: 0; }
+.dv-pick__m2 input { min-height: 48px; padding: 1.15rem .8rem .35rem; font-size: 14.5px; background: var(--paper); font-variant-numeric: tabular-nums; }
+.dv-pick__m2 label { left: .8rem; top: .85rem; font-size: 13px; }
+.dv-pick__rm { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; }
+.dv-pick__rm:hover { background: var(--bone-2); }
+.dv-pick__rm svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+
+.dv-cat { display: grid; gap: 1rem; }
+.dv-cat__bar { display: grid; grid-template-columns: minmax(0, 1fr) 200px auto; gap: .8rem; align-items: start; }
+.dv-cat__bar .field { margin: 0; }
+.dv-cat__search input::-webkit-search-cancel-button { -webkit-appearance: none; }
+.dv-cat__ftoggle { height: 58px; gap: .5rem; }
+.dv-cat__ftoggle svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+.dv-cat__ftoggle:hover svg { transform: none; }
+.dv-cat__ftoggle b { min-width: 20px; height: 20px; border-radius: 999px; background: var(--red); color: var(--paper); font-size: 11.5px; font-weight: 500; display: inline-grid; place-items: center; }
+.dv-cat__ftoggle b[hidden] { display: none; }
+.dv-filters { display: none; gap: 1rem 1.6rem; padding: 1.1rem 1.2rem; border-radius: var(--r); background: var(--paper); }
+.dv-filters.is-open { display: grid; }
+.dv-fg { border: 0; margin: 0; padding: 0; min-width: 0; }
+.dv-fg legend { padding: 0; margin-bottom: .55rem; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.dv-fg__opts { display: flex; flex-wrap: wrap; gap: .4rem; }
+.dv-chip { position: relative; cursor: pointer; }
+.dv-chip input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.dv-chip span { display: inline-flex; align-items: center; gap: .3rem; min-height: 40px; padding: .4rem .9rem; border-radius: 999px; background: var(--bone); font-size: 13.5px; transition: background .3s, color .3s; }
+.dv-chip i { font-style: normal; color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; transition: color .3s; }
+.dv-chip:hover span { background: var(--bone-2); }
+.dv-chip input:checked + span { background: var(--ink); color: var(--paper); }
+.dv-chip input:checked + span i { color: rgba(250, 247, 242, .7); }
+.dv-chip input:focus-visible + span { outline: 2px solid var(--red); outline-offset: 2px; }
+.dv-cat__head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+.dv-cat__head p { margin: 0; font-size: 14.5px; }
+.dv-cat__head b { font-weight: 500; }
+.dv-cat__head span { color: var(--muted); font-variant-numeric: tabular-nums; margin-left: .3rem; }
+.dv-cat__reset { min-height: 40px; font-size: 13px; text-decoration: underline; text-underline-offset: 3px; color: var(--ink-2); }
+.dv-cat__reset[hidden] { display: none; }
+
+.dv-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); gap: .8rem; }
+.dv-card { display: grid; grid-template-rows: auto 1fr auto; background: var(--paper); border-radius: var(--r); overflow: hidden; box-shadow: inset 0 0 0 1px transparent; transition: box-shadow .35s; min-width: 0; }
+.dv-card.is-in { box-shadow: inset 0 0 0 1.5px var(--ok); }
+.dv-card__img { position: relative; display: block; aspect-ratio: 4 / 3; overflow: hidden; background: var(--bone-2); }
+.dv-card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
+.dv-card:hover .dv-card__img img { transform: scale(1.04); }
+.dv-card__img .tag { position: absolute; left: 10px; top: 10px; }
+.dv-card__body { display: grid; gap: .15rem; align-content: start; padding: .9rem 1rem .4rem; min-width: 0; }
+.dv-card__name { font-weight: 500; font-size: 14px; line-height: 1.3; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; margin-bottom: .2rem; }
+.dv-card__ref, .dv-card__pack { font-size: 12.5px; color: var(--muted); }
+.dv-card__price { margin-top: .35rem; font-size: 13px; color: var(--ink-2); }
+.dv-card__price b { font-weight: 500; font-size: 1.05rem; letter-spacing: -.02em; color: var(--ink); font-variant-numeric: tabular-nums; }
+.dv-card__note { font-size: 12px; color: var(--muted); font-style: italic; }
+.dv-card__acts { display: grid; gap: .3rem; padding: .5rem 1rem 1rem; }
+.dv-card__add { width: 100%; }
+.dv-card__view { justify-self: center; min-height: 36px; display: inline-flex; align-items: center; font-size: 13px; color: var(--ink-2); text-decoration: underline; text-underline-offset: 3px; }
+.dv-card__view:hover { color: var(--red); }
+.dv-grid__empty { grid-column: 1 / -1; padding: 1.6rem; border-radius: var(--r); background: var(--paper); color: var(--muted); font-size: 14px; }
+.dv-grid__empty button { text-decoration: underline; color: var(--ink); }
+
+.dv-pages { display: flex; flex-wrap: wrap; justify-content: center; gap: .3rem; }
+.dv-pages:empty { display: none; }
+.dv-page { min-width: 44px; height: 44px; padding: 0 .6rem; border-radius: 999px; display: inline-grid; place-items: center; font-size: 14px; font-variant-numeric: tabular-nums; transition: background .3s, color .3s; }
+button.dv-page:hover { background: var(--bone-2); }
+.dv-page.is-current { background: var(--ink); color: var(--paper); }
+.dv-page--gap { min-width: 24px; color: var(--muted); }
+.dv-page--nav svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+.dv-page[disabled] { opacity: .3; pointer-events: none; }
+
+/* Vidéo « Comment demander un devis » */
+.dv-video { margin: 0; }
+.dv-video video { display: block; width: 100%; aspect-ratio: 16 / 9; background: var(--ink); object-fit: cover; }
+.dv-video figcaption { display: grid; gap: .3rem; padding: 1.1rem 1.5rem 0; font-size: 13.5px; color: var(--ink-2); }
+.dv-video figcaption b { font-weight: 500; font-size: 15px; color: var(--ink); }
+
+@media (max-width: 680px) {
+  .dv-aside { grid-template-columns: 1fr; }
+  .dv-cat__bar { grid-template-columns: minmax(0, 1fr) auto; }
+  .dv-cat__search { grid-column: 1 / -1; }
+  .dv-cat__ftoggle { padding: 0 .9em; }
+  .dv-pick { grid-template-columns: 48px minmax(0, 1fr) 40px; }
+  .dv-pick img { width: 48px; height: 48px; }
+  .dv-pick__m2 { grid-column: 2 / 3; grid-row: 2; }
+  .dv-pick__rm { grid-column: 3; grid-row: 1; }
+  .dv-grid { grid-template-columns: 1fr 1fr; gap: .6rem; }
+  .dv-card__body { padding: .7rem .75rem .3rem; }
+  .dv-card__acts { padding: .4rem .75rem .8rem; }
+  .dv-card__add { padding: 0 .5em; font-size: 12.5px; }
+}
